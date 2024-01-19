@@ -1,15 +1,12 @@
 <html>
 <head>
 <title>My first topic.</title>
-<script type="text/javascript">
-	int topicID;
-	const getTopicInfo = async () => {
-		const response = await fetch('');
-		const responseJSON = response.json();
-		topicID = responseJSON.topicID;
-	}
-</script>
+<script src="main.js"></script>
 </head>
 <body>
+	<template id="topicInfo">
+		<div class="topicName"></div><p> By: </p>
+		<div class="author"></div>
+	</template>
 </body>
 </html>

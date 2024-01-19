@@ -55,6 +55,12 @@ public class GetTopicInfoLambda
         return new APIGatewayProxyResponse
         {
             StatusCode = 200,
+            Headers = new Dictionary<string, string>
+            {
+                { "Access-Control-Allow-Origin", "*" }, // Allow requests from any origin
+                { "Access-Control-Allow-Headers", "Content-Type" }, // Add any additional headers needed
+                { "Access-Control-Allow-Methods", "GET" } // Specify the allowed HTTP methods
+            },
             Body = JsonConvert.SerializeObject(topicRecord)
         };
     }
